@@ -1,5 +1,172 @@
 [
     {
+        "id": "6b174a612eece458",
+        "type": "tab",
+        "label": "DHT_Humidity_Temp_Dash",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9273e49a3012d183",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8e8b5827eb93629b",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "dashboard",
+        "navigationStyle": "fixed",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "5de6e0c87dda2dc5",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "67e2de1ea24d3833",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "8e8b5827eb93629b",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "flex",
+        "theme": "5de6e0c87dda2dc5",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e3cfb3f5c0a41f8b",
+        "type": "ui-group",
+        "name": "Humidity",
+        "page": "67e2de1ea24d3833",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e6dddf5d610a71a0",
+        "type": "ui-group",
+        "name": "Temperature",
+        "page": "67e2de1ea24d3833",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a4c45315aacb94c7",
+        "type": "ui-group",
+        "name": "Group 4",
+        "page": "67e2de1ea24d3833",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5f3eda2a3fd0579c",
+        "type": "ui-spacer",
+        "group": "",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "b047a352cccdd71a",
         "type": "ui-gauge",
         "z": "6b174a612eece458",
@@ -54,96 +221,478 @@
         ]
     },
     {
-        "id": "e6dddf5d610a71a0",
-        "type": "ui-group",
-        "name": "Temperature",
-        "page": "67e2de1ea24d3833",
+        "id": "4958a16e6723e0a2",
+        "type": "ui-chart",
+        "z": "6b174a612eece458",
+        "group": "e6dddf5d610a71a0",
+        "name": "",
+        "label": "chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
         "width": 6,
-        "height": 1,
-        "order": 3,
-        "showTitle": true,
+        "height": 8,
         "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
+        "interpolation": "linear",
+        "x": 670,
+        "y": 360,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "67e2de1ea24d3833",
-        "type": "ui-page",
-        "name": "Page 1",
-        "ui": "8e8b5827eb93629b",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "flex",
-        "theme": "5de6e0c87dda2dc5",
-        "breakpoints": [
+        "id": "929554c071dc704c",
+        "type": "ui-gauge",
+        "z": "6b174a612eece458",
+        "name": "",
+        "group": "e3cfb3f5c0a41f8b",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
             {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
             },
             {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
+                "from": "40",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
             },
             {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
+                "from": "70",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
             }
         ],
-        "order": 1,
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "x": 1430,
+        "y": 240,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "8e8b5827eb93629b",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
+        "id": "68fc08f9593f6957",
+        "type": "ui-chart",
+        "z": "6b174a612eece458",
+        "group": "e3cfb3f5c0a41f8b",
+        "name": "",
+        "label": "chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
         ],
-        "showPathInSidebar": false,
-        "headerContent": "dashboard",
-        "navigationStyle": "fixed",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1430,
+        "y": 300,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "5de6e0c87dda2dc5",
-        "type": "ui-theme",
-        "name": "Default Theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094CE",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
+        "id": "92beb37cc775ccbc",
+        "type": "mqtt in",
+        "z": "6b174a612eece458",
+        "name": "",
+        "topic": "mystic/temp_c",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9273e49a3012d183",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "37bb0fce069da15a"
+            ]
+        ]
     },
     {
-        "id": "c3ce10a21987a304",
+        "id": "c04813610314530e",
+        "type": "debug",
+        "z": "6b174a612eece458",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "37bb0fce069da15a",
+        "type": "function",
+        "z": "6b174a612eece458",
+        "name": "function 1",
+        "func": "let fixed = msg.payload.replace(/'/g,'\"');\n\nlet obj= JSON.parse(fixed);\nmsg.payload=obj.temperature_c;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 340,
+        "wires": [
+            [
+                "c04813610314530e",
+                "b047a352cccdd71a",
+                "4958a16e6723e0a2"
+            ]
+        ]
+    },
+    {
+        "id": "9314dcf354009c15",
+        "type": "function",
+        "z": "6b174a612eece458",
+        "name": "function 2",
+        "func": "let fixed = msg.payload.replace(/'/g,'\"');\n\nlet obj= JSON.parse(fixed);\nmsg.payload=obj.temperature_f;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 660,
+        "wires": [
+            [
+                "b9da7a690fd82fc9",
+                "419202e6458cbb0f",
+                "5922cd5a1e766496"
+            ]
+        ]
+    },
+    {
+        "id": "746b56e356ff946e",
+        "type": "mqtt in",
+        "z": "6b174a612eece458",
+        "name": "",
+        "topic": "mystic/temp_f",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9273e49a3012d183",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 560,
+        "wires": [
+            [
+                "9314dcf354009c15"
+            ]
+        ]
+    },
+    {
+        "id": "b9da7a690fd82fc9",
+        "type": "debug",
+        "z": "6b174a612eece458",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "419202e6458cbb0f",
+        "type": "ui-gauge",
+        "z": "6b174a612eece458",
+        "name": "",
+        "group": "a4c45315aacb94c7",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Degree F",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 630,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5922cd5a1e766496",
+        "type": "ui-chart",
+        "z": "6b174a612eece458",
+        "group": "a4c45315aacb94c7",
+        "name": "",
+        "label": "chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 630,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "765b7e119b824bea",
+        "type": "mqtt in",
+        "z": "6b174a612eece458",
+        "name": "",
+        "topic": "mystic/humd",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9273e49a3012d183",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1090,
+        "y": 100,
+        "wires": [
+            [
+                "8ea1c3e0e92754e2"
+            ]
+        ]
+    },
+    {
+        "id": "8ea1c3e0e92754e2",
+        "type": "function",
+        "z": "6b174a612eece458",
+        "name": "function 3",
+        "func": "let fixed = msg.payload.replace(/'/g,'\"');\n\nlet obj= JSON.parse(fixed);\nmsg.payload=obj.humidity;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 220,
+        "wires": [
+            [
+                "929554c071dc704c",
+                "68fc08f9593f6957",
+                "36bb326957609cb9"
+            ]
+        ]
+    },
+    {
+        "id": "36bb326957609cb9",
+        "type": "debug",
+        "z": "6b174a612eece458",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "64b74f7be836a13c",
         "type": "global-config",
         "env": [],
         "modules": {
