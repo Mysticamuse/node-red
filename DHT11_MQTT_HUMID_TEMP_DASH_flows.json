@@ -1,62 +1,54 @@
 [
     {
-        "id": "4958a16e6723e0a2",
-        "type": "ui-chart",
+        "id": "b047a352cccdd71a",
+        "type": "ui-gauge",
         "z": "6b174a612eece458",
-        "group": "e6dddf5d610a71a0",
         "name": "",
-        "label": "chart",
-        "order": 2,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "append",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
+        "group": "e6dddf5d610a71a0",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Degree Celcius",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
         ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
         "className": "",
-        "interpolation": "linear",
         "x": 670,
-        "y": 360,
+        "y": 320,
         "wires": [
             []
         ]
@@ -151,7 +143,7 @@
         }
     },
     {
-        "id": "2d8996381a2e59e0",
+        "id": "c3ce10a21987a304",
         "type": "global-config",
         "env": [],
         "modules": {
